@@ -1,0 +1,31 @@
+name: DTIN-TEST-19 CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  unit-test:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Audit
+        working-directory: 1-unit-test
+        run: npm audit --production
+
+      - name: Install packages
+        working-directory: 1-unit-test
+        run: npm ci
+
+      - name: Run tests
+        working-directory: 1-unit-test
+        run: npm test
