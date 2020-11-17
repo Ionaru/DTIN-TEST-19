@@ -53,6 +53,7 @@ jobs:
           retention-days: 2
 
       - uses: actions/upload-artifact@v2
+        if: failure()
         with:
           name: cypress-videos
           path: 5-gui-test/cypress/videos
