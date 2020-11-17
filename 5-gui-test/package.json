@@ -1,0 +1,12 @@
+{
+  "name": "5-gui-test",
+  "version": "1.0.0",
+  "scripts": {
+    "cypress": "cypress open",
+    "test": "cypress run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^5.6.0"
+  }
+}

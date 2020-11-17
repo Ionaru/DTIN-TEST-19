@@ -1,0 +1,22 @@
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Node/Npm files
+npm-debug.log*
+node_modules/
+
+# Build files & test artifacts
+coverage/
+dist/
+cypress/videos
+cypress/screenshots
+
+# Local application files
+logs/
+*.log
+
+# System files
+*.db
+*.DS_Store
