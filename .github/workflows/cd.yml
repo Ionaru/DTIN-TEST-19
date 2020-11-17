@@ -42,19 +42,18 @@ jobs:
 
       - name: Run tests
         uses: cypress-io/github-action@v2
-        working-directory: 5-gui-test
+        with:
+          working-directory: 5-gui-test
 
       - uses: actions/upload-artifact@v2
-        working-directory: 5-gui-test
         if: failure()
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: 5-gui-test/cypress/screenshots
           retention-days: 2
 
       - uses: actions/upload-artifact@v2
-        working-directory: 5-gui-test
         with:
           name: cypress-videos
-          path: cypress/videos
+          path: 5-gui-test/cypress/videos
           retention-days: 2
