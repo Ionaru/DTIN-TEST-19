@@ -1,6 +1,7 @@
 name: DTIN-TEST-19 CD
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
