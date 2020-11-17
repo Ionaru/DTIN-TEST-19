@@ -5,10 +5,10 @@ This folder contains the source code and tests for the unit-test portion of the 
  assignment.
 
 ## Usage
-0. Clone repository
-0. Navigate to 1-unit-test
-0. `npm ci`
-0. `npm test`
+1. Clone repository
+1. Navigate to 1-unit-test
+1. `npm ci`
+1. `npm test`
 
 ## Artifacts
 Coverage report will be in ./coverage after running the tests.
