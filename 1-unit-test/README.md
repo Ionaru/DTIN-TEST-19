@@ -11,7 +11,7 @@ This folder contains the source code and tests for the unit-test portion of the 
 1. `npm test`
 
 ## Artifacts
-Coverage report will be in ./coverage after running the tests.
+- Coverage report will be in ./coverage after running the tests.
 
 ## Technologies used
 - [npm](https://www.npmjs.com/) for package security auditing.
