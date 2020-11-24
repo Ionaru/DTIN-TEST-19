@@ -1,3 +1,4 @@
 {
-  "baseUrl": "http://demowebshop.tricentis.com"
+  "baseUrl": "http://demowebshop.tricentis.com",
+  "delay": 500
 }

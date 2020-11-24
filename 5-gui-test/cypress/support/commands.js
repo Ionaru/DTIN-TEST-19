@@ -32,8 +32,7 @@ Cypress.Commands.add('login', (email, password) => {
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-const COMMAND_DELAY = 500;
-
+// Adds configurable delay to command execution.
 for (const command of ['get', 'visit', 'click', 'trigger', 'type', 'clear', 'reload', 'contains']) {
     Cypress.Commands.overwrite(command, (originalFn, ...args) => {
         const origVal = originalFn(...args);
@@ -41,7 +40,7 @@ for (const command of ['get', 'visit', 'click', 'trigger', 'type', 'clear', 'rel
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(origVal);
-            }, COMMAND_DELAY);
+            }, Cypress.config().delay);
         });
     });
 }
