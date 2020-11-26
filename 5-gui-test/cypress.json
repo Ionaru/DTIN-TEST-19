@@ -1,4 +1,8 @@
 {
   "baseUrl": "http://demowebshop.tricentis.com",
-  "delay": 500
+  "delay": 500,
+  "user": {
+    "email": "mail+20201117@example.com",
+    "password": "Wachtwoord123"
+  }
 }
