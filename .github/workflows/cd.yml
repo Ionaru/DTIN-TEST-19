@@ -31,6 +31,12 @@ jobs:
         working-directory: 1-unit-test
         run: npm test
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: test-coverage
+          path: 1-unit-test/coverage
+          retention-days: 2
+
   gui-test:
 
     runs-on: ubuntu-latest
