@@ -43,8 +43,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set Env
-        run: echo "::set-env name=workspace::$GITHUB_WORKSPACE"
+      - name: Set Workspace
+        id: workspace
+        run: echo "::set-output name=workspace::$GITHUB_WORKSPACE"
 
       - name: Run SoapUI tests
         uses: ./.github/actions/docker/soapui
