@@ -43,8 +43,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Hello world action step
-        uses: ./actions/soapui-action.yml
+      - name: Run SoapUI tests
+        uses: ./.github/actions/soapui-action.yml
         id: apitest
         with:
           working-directory: 2-api-test
