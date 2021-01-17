@@ -4,11 +4,16 @@
 WORKING_DIR=$1; shift;
 PROJECT_FILE=$1; shift;
 
-echo "Running testrunner.sh with testrunner.sh \"$@\" -f\"$GITHUB_WORKSPACE/$WORKING_DIR/TestResult\" \"$GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE\"";
-echo `test -f "$GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE"`;
+if test -f "$GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE"; then
+  echo "Project file found exists.";
+  echo "testrunner.sh \"$@\" -f\"$GITHUB_WORKSPACE/$WORKING_DIR/TestResult\" \"$GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE\"";
 
-STATUS=`sh /opt/soapui/bin/testrunner.sh "$@" -f"$GITHUB_WORKSPACE/$WORKING_DIR/TestResult" "$GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE" | grep 'Total Failed Assertions: *'`;
+  STATUS=`sh /opt/soapui/bin/testrunner.sh "$@" -f"$GITHUB_WORKSPACE/$WORKING_DIR/TestResult" "$GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE" | grep 'Total Failed Assertions: *'`;
 
-if [ "$STATUS" != "Total Failed Assertions: 0" ]; then
-  return 103;
+  if [ "$STATUS" != "Total Failed Assertions: 0" ]; then
+    return 103;
+  fi
+else
+  echo "Project file found not found at $GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE";
+  return 1;
 fi
