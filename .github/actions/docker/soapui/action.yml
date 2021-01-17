@@ -18,4 +18,4 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - -s"${{ inputs.test-suite }}" -r -j -f"$GITHUB_WORKSPACE/${{ inputs.working-directory }}/TestResult" -I "$GITHUB_WORKSPACE/${{ inputs.working-directory }}${{ inputs.project-file }}.xml"
+    - -s"${{ inputs.test-suite }}" -r -j -f"${{ GITHUB_WORKSPACE }}/${{ inputs.working-directory }}/TestResult" -I "${{ GITHUB_WORKSPACE }}/${{ inputs.working-directory }}/${{ inputs.project-file }}"
