@@ -1,0 +1,21 @@
+name: "SoapUI Action"
+description: "Runs the tests defined in SoapUI"
+inputs:
+  working-directory:
+    description: "The working directory containing the project file"
+    required: true
+  project-file:
+    description: "The name of the project file"
+    required: true
+  test-suite:
+    description: "The TestSuite to run"
+    required: true
+    default: "TestSuite 1"
+outputs:
+  status-code:
+    description: "The StatusCode returned by the tests"
+runs:
+  using: "docker"
+  image: "./docker/soapuiDockerfile"
+  args:
+    - "-s${{ inputs.test-suite }} -r -j -f./${{ inputs.working-directory }}/TestResult -I ./${{ inputs.working-directory }}${{ inputs.project-file }}.xml"
