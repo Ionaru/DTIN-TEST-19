@@ -18,4 +18,6 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - -s"${{ inputs.test-suite }}" -r -j -f"${{ steps.workspace.outputs.workspace }}/${{ inputs.working-directory }}/TestResult" -I "${{ steps.workspace.outputs.workspace }}/${{ inputs.working-directory }}/${{ inputs.project-file }}"
+    - ${{ inputs.working-directory }}
+    - ${{ inputs.project-file }}
+    - -s"${{ inputs.test-suite }}" -r -j -I
