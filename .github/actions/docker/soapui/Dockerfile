@@ -16,4 +16,4 @@ ENV PATH ${PATH}:/opt/soapui/bin
 COPY ./custom-testrunner.sh /opt/soapui/bin
 RUN chmod +x /opt/soapui/bin/custom-testrunner.sh
 
-ENTRYPOINT [ "sh", "-c", "/opt/soapui/bin/custom-testrunner.sh" ]
+ENTRYPOINT [ "/opt/soapui/bin/custom-testrunner.sh" ]
