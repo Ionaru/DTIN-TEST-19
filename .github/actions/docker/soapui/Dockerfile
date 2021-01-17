@@ -9,6 +9,9 @@ RUN curl  https://s3.amazonaws.com/downloads.eviware/soapuios/5.6.0/SoapUI-5.6.0
   | gunzip -c - | tar -xf - -C /opt && \
   mv /opt/SoapUI-5.6.0 /opt/soapui
 
+# Set PATH
+ENV PATH ${PATH}:/opt/soapui/bin
+
 # Copy entrypoint
 COPY ./entrypoint.sh /entrypoint.sh
 
