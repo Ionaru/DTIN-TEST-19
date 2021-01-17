@@ -14,8 +14,8 @@ assignment.
 
 1. Clone repository
 2. Navigate to 2-api-test
-3. `./build-tests.sh`
-4. `./run-tests.sh "TestSuite 1"`
+3. `./scripts/build-tests.sh`
+4. `./scripts/run-tests.sh "TestSuite 1"`
 
 ## Artifacts
 

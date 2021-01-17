@@ -13,7 +13,6 @@ RUN curl  https://s3.amazonaws.com/downloads.eviware/soapuios/5.6.0/SoapUI-5.6.0
 ENV PATH ${PATH}:/opt/soapui/bin
 
 # Copy custom testrunner
-COPY ./scripts/custom-testrunner.sh /opt/soapui/bin
-RUN chmod +x /opt/soapui/bin/custom-testrunner.sh
+COPY ./scripts/entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [ "/opt/soapui/bin/custom-testrunner.sh" ]
+ENTRYPOINT [ "sh", "/entrypoint.sh" ]
