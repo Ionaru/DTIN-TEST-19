@@ -44,7 +44,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run SoapUI tests
-        uses: ./.github/actions/soapui-action.yml
+        uses: ./.github/actions/docker/soapui
         id: apitest
         with:
           working-directory: 2-api-test
