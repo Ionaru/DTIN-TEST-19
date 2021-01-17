@@ -49,7 +49,7 @@ jobs:
         with:
           working-directory: 2-api-test
           project-file: SoapUI-tests.xml
-          testsuite: TestSuite 1
+          test-suite: TestSuite 1
 
       - uses: actions/upload-artifact@v2
         with:

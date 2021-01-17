@@ -16,6 +16,6 @@ outputs:
     description: "The StatusCode returned by the tests"
 runs:
   using: "docker"
-  image: "./docker/soapuiDockerfile"
+  image: "Dockerfile"
   args:
     - "-s${{ inputs.test-suite }} -r -j -f./${{ inputs.working-directory }}/TestResult -I ./${{ inputs.working-directory }}${{ inputs.project-file }}.xml"
