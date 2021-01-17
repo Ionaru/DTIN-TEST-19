@@ -12,4 +12,4 @@ RUN curl  https://s3.amazonaws.com/downloads.eviware/soapuios/5.6.0/SoapUI-5.6.0
 # Copy entrypoint
 COPY ./entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "sh", "/entrypoint.sh" ]
