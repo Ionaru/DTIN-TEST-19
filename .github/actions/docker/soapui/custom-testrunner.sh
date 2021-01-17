@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo $@;
 echo $#;
 WORKING_DIR=$1; shift;
 PROJECT_FILE=$1; shift;
