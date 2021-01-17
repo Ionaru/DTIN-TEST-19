@@ -11,13 +11,12 @@ on:
 
 jobs:
   unit-test:
-
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: "14.x"
 
       - name: Audit
         working-directory: 1-unit-test
@@ -37,14 +36,34 @@ jobs:
           path: 1-unit-test/coverage
           retention-days: 1
 
-  gui-test:
+  api-test:
+    runs-on: ubuntu-latest
+    name: Job for running the API tests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
+      - name: Hello world action step
+        uses: ./actions/soapui-action.yml
+        id: apitest
+        with:
+          working-directory: 2-api-test
+          project-file: SoapUI-tests.xml
+          testsuite: TestSuite 1
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: soapui-testresult
+          path: 2-api-test/TestResult
+          retention-days: 1
+
+  gui-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: "14.x"
 
       - name: Run tests
         uses: cypress-io/github-action@v2
