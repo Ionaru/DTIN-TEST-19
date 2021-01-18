@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim-buster
+FROM openjdk:11.0.9.1-jre
 
 # Install curl
 RUN apt-get update && \
