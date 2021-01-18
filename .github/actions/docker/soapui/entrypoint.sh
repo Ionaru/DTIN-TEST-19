@@ -6,7 +6,9 @@ TEST_SUITE=$1; shift;
 
 if test -f "$GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE"; then
   echo "Project file exists.";
-  
+
+  echo $(ls -l /opt/soapui/lib);
+
   STATUS=$(sh /opt/soapui/bin/testrunner.sh "-r" "-j" "-I" "-f$GITHUB_WORKSPACE/$WORKING_DIR/TestResult" "-s$TEST_SUITE" "$GITHUB_WORKSPACE/$WORKING_DIR/$PROJECT_FILE" | grep 'Total Failed Assertions: *');
 
   echo $STATUS;
