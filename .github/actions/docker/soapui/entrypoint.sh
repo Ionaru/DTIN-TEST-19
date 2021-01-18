@@ -1,6 +1,5 @@
 #!/bin/sh -l
 
-GITHUB_WORKSPACE="/opt/soapui/projects";
 WORKING_DIR=$1; shift;
 PROJECT_FILE=$1; shift;
 TEST_SUITE=$1; shift;
