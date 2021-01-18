@@ -16,4 +16,3 @@ ENV PATH ${PATH}:/opt/soapui/bin
 COPY ./entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "sh", "/entrypoint.sh" ]
-# ENTRYPOINT ["sh", "-c", "tail -f /dev/null"]
