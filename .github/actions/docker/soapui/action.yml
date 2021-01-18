@@ -20,4 +20,4 @@ runs:
   args:
     - ${{ inputs.working-directory }}
     - ${{ inputs.project-file }}
-    - -s"${{ inputs.test-suite }}" -r -j -I
+    - ${{ inputs.test-suite }}
